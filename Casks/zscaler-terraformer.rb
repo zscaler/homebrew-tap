@@ -7,10 +7,10 @@ cask "zscaler-terraformer" do
 
   if Hardware::CPU.intel?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_darwin_amd64.tar.gz"
-    sha256 "161c662c020f321997822fba70d2ae0b62d555fa0f7989fdf6a2d16c1abcfb91"
+    sha256 "f2291fa0fcb72b93f29ef4f9b5f81d9a3e7fcdd249bf4a0d54109cbac960713e"
   else
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_darwin_arm64.tar.gz"
-    sha256 "96e58c47d792be50f7faa04dd8410a80f88d88693b45ead0a35ad80d3ca8b2c8"
+    sha256 "452f8326e51fbebdb35c5df11b211de14b2259cc77042d3a189d96d29a3b9990"
   end
 
   binary "zscaler-terraformer"
