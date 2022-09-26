@@ -9,6 +9,8 @@ class ZscalerTerraformer < Formula
   license "MIT"
 
   def install
-    bin.install 'zscaler-terraformer'
+    bin.install "zscaler-terraformer"
+    prefix.install "README.md"
+    prefix.install "LICENSE"
   end
 end
