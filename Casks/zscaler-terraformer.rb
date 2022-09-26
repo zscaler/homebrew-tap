@@ -2,7 +2,7 @@ cask "zscaler-terraformer" do
   name "zscaler-terraformer"
   appcast "https://github.com/zscaler/zscaler-terraformer/releases.atom"
   homepage "https://github.com/zscaler/zscaler-terraformer"
-  desc "zscaler-terraformer is a command line utility to facilitate terraforming your existing ZIA and ZPA resources."
+  desc "Command-line utility to terraforming your existing ZIA and ZPA resources"
   version "0.0.1"
 
   if Hardware::CPU.intel?
