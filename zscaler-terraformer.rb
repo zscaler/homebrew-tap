@@ -6,10 +6,13 @@ class ZscalerTerraformer < Formula
     license "MIT"
     head "https://github.com/zscaler/zscaler-terraformer.git", branch: "master"
 
+    depends_on "go" => :build
+
     def install
-        bin.install "zscaler-terraformer"
-        prefix.install "README.md"
-        prefix.install "LICENSE"
+        system "go", "build", *std_go_args(ldflags: "-s -w")
+        # bin.install "zscaler-terraformer"
+        # prefix.install "README.md"
+        # prefix.install "LICENSE"
     end
 
     test do
