@@ -11,7 +11,7 @@ class ZscalerTerraformer < Formula
     def install
         bin.install "zscaler-terraformer
         prefix.install "README.md"
-        prefix.install "LICENSE"  "
+        prefix.install "LICENSE"
         system "go", "build", *std_go_args(ldflags: "-s -w")
     end
 
