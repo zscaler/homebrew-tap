@@ -10,11 +10,6 @@ class ZscalerTerraformer < Formula
     depends_on "go" => :build
 
     def install
-        bin.install "zscaler-terraformer"
-        prefix.install "README.md"
-        prefix.install "LICENSE"
-        bin.install Dir["lib"]
-        bin.install Dir["files"]
         system "go", "build", *std_go_args(ldflags: "-s -w")
     end
 
