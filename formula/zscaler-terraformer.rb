@@ -4,23 +4,28 @@ class ZscalerTerraformer < Formula
   version "0.0.1"
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/zscaler/zscaler-terraformer/releases/download/v0.0.1/zscaler-terraformer_0.0.1_darwin_amd64.tar.gz"
-    sha256 "37cc775d2390dd16404f02fa80666f72c1763b3bcfc5efdf2c4371fc502b7773"
+    url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_darwin_amd64.zip"
+    sha256 "b48b1ad6aa34e9aad48a09375980b8b5d3dd9c4e30abc42954f0cfc9d5351763"
   end
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/zscaler/zscaler-terraformer/releases/download/v0.0.1/zscaler-terraformer_0.0.1_darwin_arm64.tar.gz"
-    sha256 "f4d524ef4a140b5be85173c2261bde88dca8ac2b2aea63d917e6e8f3d6a7b0d1"
+    url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_darwin_arm64.zip"
+    sha256 "d40df55c77eb5b8dbed3555d96fd8f29382b0de17f1cf4318e48daf6c985b158"
   end
 
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/zscaler/zscaler-terraformer/releases/download/v0.0.1/zscaler-terraformer_0.0.1_linux_amd64.tar.gz"
-    sha256 "c7cdfef0ecbfe3394f60c83266df62d9f77672344bc91a0af059977fc0d522cc"
+    url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_linux_amd64.zip"
+    sha256 "602556f217c733e04563a232dd9da6c4f3773e0f93db180946b84a665993c957"
   end
 
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/zscaler/zscaler-terraformer/releases/download/v0.0.1/zscaler-terraformer_0.0.1_linux_arm64.tar.gz"
-    sha256 "338ae40d4f34bf80045a5a3739f6879c1635c5fd22dbfc07357378ecff3e1272"
+    url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_linux_arm.zip"
+    sha256 "99706c064cb79f37e16ffcb1fa313eb532dc2c2f2d5d367b13cf180450c97e57"
+  end
+
+  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+    url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_linux_arm64.zip"
+    sha256 "d80eeb835bb28d95746f31f9bf6c9f07706f502d11db8cedd8ab558d05ad2f40"
   end
 
   conflicts_with "zscaler-terraformer"
