@@ -7,27 +7,27 @@ cask "zscaler-terraformer" do
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_darwin_amd64.zip"
-    sha256 "87c62359f01583a0b10f14b0d20b3e14a55ded88748b7fa73cef8ef40c86a7f9"
+    sha256 "a433a98b0acafc186c6fd2af4f508103b4425e134fb49ab1e7fb1a615adc2e20"
   end
 
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_darwin_arm64.zip"
-    sha256 "b1e518eb7bac8c2f03af49a935c17d82a8c0f91773c34fc29f9f45dfedaee603"
+    sha256 "6b46d23b77a52e92fceea587d2f549ad1e333b5a9b2343f128347f17c353f04d"
   end
 
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_linux_amd64.zip"
-    sha256 "1dc759d8e2882beaa78777add5a1fa35eac6509f387f1b41e199ed5720192b49"
+    sha256 "e22585baa2ed4745c0e356263007d76feeadb3047e1805ce87f10993c550d9bb"
   end
 
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_linux_arm.zip"
-    sha256 "d895d13af652daa660f8cf860f0964811d22ac406ab83e3f0a98c4de6e7e7cae"
+    sha256 "05edee330ea9b28875a0a49a92216bca50c9f2a6d8d0c88723be862b60d37ae1"
   end
 
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_linux_arm64.zip"
-    sha256 "e2940322fa652d28e2e8561c9342e5b6644748cc10dda62961fc55cb7ac33ccf"
+    sha256 "d02e43e8b58426b1ce25e3db311c63040386603945fca5af1624fadccc9411ed"
   end
 
   binary "zscaler-terraformer"
