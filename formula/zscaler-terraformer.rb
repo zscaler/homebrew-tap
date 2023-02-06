@@ -1,31 +1,31 @@
 class ZscalerTerraformer < Formula
   desc "CLI tool to generate terraform files from existing ZPA and ZIA"
   homepage "https://github.com/zscaler/zscaler-terraformer"
-  version "0.2.0"
+  version "0.2.1"
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_darwin_amd64.zip"
-    sha256 "d4cc2d987a8628c4e073fd256fe0e02162e52979c33f2cf0e62f3698343b7b20"
+    sha256 "7fffb6daa936b1ae8cb3518aada412f7e9ec00c9abdb7186ea859a38733b0234"
   end
 
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_darwin_arm64.zip"
-    sha256 "18f4e8c2a96deef97e3037780d55f78578be2fa8a2df4d5eb4b1e2ce0bdca951"
+    sha256 "d09e5e6a576a21fb9a838de831157078c39b1ee07e29db98eb2012538ee0fd4d"
   end
 
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_linux_amd64.zip"
-    sha256 "e5d9e17c4caeabb8719dffd3beb7af9a69999844fa3804baafb9cfa926985316"
+    sha256 "2739b5584506ed11d5afc6e61c9ed6350dfb36e25412ea5e117c46e286273fb8"
   end
 
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_linux_arm.zip"
-    sha256 "fc8da68b775b79eddd2fc1391080de99a218992dc59d6e9dc07eb39c39dc4aa4"
+    sha256 "3400618ae09e062e95192b9303f185ba28b65578cc0cc92d564e7f9e8d1cd3f5"
   end
 
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_linux_arm64.zip"
-    sha256 "35bb05b568679321297d390c36c57ad3c674a131a9f911d48cf644e7ff8d26f4"
+    sha256 "0aff978031bc7ec630399801994484f609a90c07c8ca52da2db2b51a00b4ba19"
   end
 
   conflicts_with "zscaler-terraformer"
