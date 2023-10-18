@@ -3,31 +3,31 @@ cask "zscaler-terraformer" do
   appcast "https://github.com/zscaler/zscaler-terraformer/releases.atom"
   homepage "https://github.com/zscaler/zscaler-terraformer"
   desc "CLI tool to generate terraform files from existing ZPA and ZIA"
-  version "0.3.2"
+  version "0.3.3"
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_darwin_amd64.zip"
-    sha256 "be7549a5b04ca4609af7d8306ae76046f3153f3aaec1a4d4ad9b59ceb907481a"
+    sha256 "51c6940050110fdd4e5ee2281a19155d3bd515b361256c2433c78ba93d46e1c7"
   end
 
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_darwin_arm64.zip"
-    sha256 "f0c95e163b6cafa006a40303f6e2a8dfed27c7390b02e4460a3b8f73e3fe57a9"
+    sha256 "1ac23e000fa42e98b5a8f0847d309817aefde1f356669580241f79acd7122631"
   end
 
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_linux_amd64.zip"
-    sha256 "09ab6400702ee19d61660c1edc703d6353689bfc355f349dcc17e3d8dedd2181"
+    sha256 "0d7c5e616e2fb3ca2c1b94f4e362764867a8dfe72dbad41530038315aca15fe6"
   end
 
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_linux_arm.zip"
-    sha256 "f019825e0b794172112e0a5ca1bf16f1410cf9819887cfe6995a931740ed5dd5"
+    sha256 "52bce0fc62b938ed3cfae65042defdce66a3a86e7e91efa424ccfff5bac94e9d"
   end
 
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_linux_arm64.zip"
-    sha256 "b62dba423428069a6b5b276346e67c79223c2308387d2d4c09808d57ffdfa12a"
+    sha256 "9717465324aa04cd4ea0a4800022d354ef6a4ff5704ebc0afee9b3097c00d2ea"
   end
 
   binary "zscaler-terraformer"
