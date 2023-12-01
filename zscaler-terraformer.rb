@@ -23,12 +23,17 @@ class ZscalerTerraformer < Formula
     sha256 "52bce0fc62b938ed3cfae65042defdce66a3a86e7e91efa424ccfff5bac94e9d"
   end
 
-  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_linux_arm64.zip"
     sha256 "9717465324aa04cd4ea0a4800022d354ef6a4ff5704ebc0afee9b3097c00d2ea"
   end
 
   conflicts_with "zscaler-terraformer"
+
+  livecheck do
+    url "https://github.com/zscaler/zscaler-terraformer/releases.atom"
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   def install
     bin.install "zscaler-terraformer"
