@@ -30,6 +30,11 @@ class ZscalerTerraformer < Formula
 
   conflicts_with "zscaler-terraformer"
 
+  livecheck do
+    url "https://github.com/zscaler/zscaler-terraformer/releases.atom"
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   def install
     bin.install "zscaler-terraformer"
   end

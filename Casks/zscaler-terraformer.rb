@@ -1,9 +1,17 @@
+# Copyright (c) Zscaler, Inc.
+# MIT License
+
 cask "zscaler-terraformer" do
   name "zscaler-terraformer"
-  appcast "https://github.com/zscaler/zscaler-terraformer/releases.atom"
   homepage "https://github.com/zscaler/zscaler-terraformer"
   desc "CLI tool to generate terraform files from existing ZPA and ZIA"
   version "0.3.3"
+
+  livecheck do
+    url "https://github.com/zscaler/zscaler-terraformer/releases.atom"
+    strategy :page_match
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["']}i)
+  end
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_darwin_amd64.zip"
