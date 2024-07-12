@@ -1,11 +1,11 @@
 class ZscalerTerraformer < Formula
   desc "CLI tool to generate terraform files from existing ZPA and ZIA"
   homepage "https://github.com/zscaler/zscaler-terraformer"
-  version "1.2.2"
+  version "1.3.0"
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_darwin_amd64.zip"
-    sha256 "bb21a577a0e91e110a6287a707682671e5f1c958bf8d1d03069f3755589aa54a"
+    url "https://github.com/zscaler/zscaler-terraformer/archive/refs/tags/v1.3.0.tar.gz"
+    sha256 "f05dc70734737b70399e34d3f1aa1a243e8d605d0d48abaecd7ea0d7dcd9c089"
   end
 
   if OS.mac? && Hardware::CPU.arm?
