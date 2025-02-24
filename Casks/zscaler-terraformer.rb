@@ -5,7 +5,7 @@ cask "zscaler-terraformer" do
   name "zscaler-terraformer"
   homepage "https://github.com/zscaler/zscaler-terraformer"
   desc "CLI tool to generate terraform files from existing ZPA and ZIA"
-  version "2.0.2"
+  version "2.0.3"
 
   livecheck do
     url "https://github.com/zscaler/zscaler-terraformer/releases.atom"
