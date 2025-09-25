@@ -1,42 +1,28 @@
-# Copyright (c) Zscaler, Inc.
-# MIT License
-
-cask "zscaler-terraformer" do
-  name "zscaler-terraformer"
+class ZscalerTerraformer < Formula
+  desc "Generate Terraform configurations from existing Zscaler ZIA/ZPA resources"
   homepage "https://github.com/zscaler/zscaler-terraformer"
-  desc "CLI tool to generate terraform files from existing ZPA and ZIA"
-  version "2.0.19"
-
-  livecheck do
-    url "https://github.com/zscaler/zscaler-terraformer/releases.atom"
-    strategy :page_match
-    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["']}i)
-  end
+  version "2.1.0"
+  license "MIT"
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_darwin_amd64.zip"
-    sha256 "0ee79dbea0f540b9567f503276967e846a00c58cf4d9980611e2599bb362f605"
+    url "https://github.com/zscaler/zscaler-terraformer/releases/download/v2.1.0/zscaler-terraformer_2.1.0_darwin_amd64.zip"
+    sha256 "f5833dc524910ae2102597d3732a72f141e3d6cc74ec0a90532f9eb414adeed9"
+  elsif OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/zscaler/zscaler-terraformer/releases/download/v2.1.0/zscaler-terraformer_2.1.0_darwin_arm64.zip"
+    sha256 "6c93af46afc11ad09b3a27597c8e85b428ef614d2090f1848bda109810be4971"
+  elsif OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/zscaler/zscaler-terraformer/releases/download/v2.1.0/zscaler-terraformer_2.1.0_linux_amd64.zip"
+    sha256 "914c8cad6916090940e03f085890d0bfcc7e3e6093f8da3e461861418c9abe54"
+  elsif OS.linux? && Hardware::CPU.arm?
+    url "https://github.com/zscaler/zscaler-terraformer/releases/download/v2.1.0/zscaler-terraformer_2.1.0_linux_arm64.zip"
+    sha256 "65c8b46a43a2767df1ba17f7d14275d64e58a70ccf790b4cb5953327b1725ac6"
   end
 
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_darwin_arm64.zip"
-    sha256 "c3c799238160b130e766b4b3bb87265837323fad19547a490726fca5930f6547"
+  def install
+    bin.install "zscaler-terraformer"
   end
 
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_linux_amd64.zip"
-    sha256 "5195b58f62ea4420623da5e6cb5edf6c47b6f12feea3f226ccd0edcdedbd8976"
+  test do
+    system "#{bin}/zscaler-terraformer", "version"
   end
-
-  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_linux_arm.zip"
-    sha256 "fcd314486a31d1c2d03bc86babac670b31b5eb1080852490d71218993d72e865"
-  end
-
-  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_linux_arm64.zip"
-    sha256 "1ca848cf7b1f414c845dfa323a4f432b02d3583ad5a138b340a4f6936b42fb8e"
-  end
-
-  binary "zscaler-terraformer"
 end
