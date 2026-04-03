@@ -5,7 +5,7 @@ cask "zscaler-terraformer" do
   name "zscaler-terraformer"
   homepage "https://github.com/zscaler/zscaler-terraformer"
   desc "CLI tool to generate terraform files from existing ZPA and ZIA"
-  version "2.1.14"
+  version "2.1.15"
 
   livecheck do
     url "https://github.com/zscaler/zscaler-terraformer/releases.atom"
@@ -15,27 +15,27 @@ cask "zscaler-terraformer" do
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_darwin_amd64.zip"
-    sha256 "eb17a013d1b394a5cc96e03d8952c45a5a55d3b4c4bf7cef36e53b990109f4ad"
+    sha256 "d27c05a5790301e9c6ae9021cd2237c8d107b46d0fd66fe57f36b859a1e6f472"
   end
 
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_darwin_arm64.zip"
-    sha256 "b03a6e996a7f90a7917d2f0f258988737bc0f724a11ece2e3d81756e28fd1cc8"
+    sha256 "4beb64c52ff2cb568c3982204be35ef934454cb398e37cf9beba8a2d00450ba6"
   end
 
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_linux_amd64.zip"
-    sha256 "c0db43b29fca96c784a4a2bdd8cb978bd6ff028def785bfc6043be5fd8b990b8"
+    sha256 "a0ad827aefcbd4d7d1f8715ab37e0a29a4ba5900608d4f7bfaef519c15cca523"
   end
 
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_linux_arm.zip"
-    sha256 "6a7cfcae6b826bc4c45ed29a7175a5bfb15084f50f28e9648ee9d4132aadfe69"
+    sha256 "bc36b73137baa05428e0a6550c8d040eea1069034a284a7ff50b5d4dc1d414ca"
   end
 
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/zscaler/zscaler-terraformer/releases/download/v#{version}/zscaler-terraformer_#{version}_linux_arm64.zip"
-    sha256 "9cb3796f4c6bf8aca6e529f7c9a45446046f23de26841147b577137ee35e1756"
+    sha256 "7aa5baa228a2ef082425c863d07ecf25b64f08d99abf786c257f619821fbdfdd"
   end
 
   binary "zscaler-terraformer"
